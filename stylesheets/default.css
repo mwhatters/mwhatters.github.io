@@ -2,6 +2,7 @@
 
 body {
   margin: 0px;
+  background-color: white;
 }
 
 
@@ -37,7 +38,7 @@ h2 {
 
 nav {
   position: relative;
-  display: inline-block;
+  display: inline;
   bottom: 1em;
   left: 1em;
   margin-left: 1.5em;
@@ -74,11 +75,15 @@ nav a:visited {
   width: 950px;
   margin: 0 auto;
   font-family: 'Slabo 27px' serif;
-  background-color: lightgray;
 }
 
 #upperBox {
-  border-bottom: 3px  solid white;
+  background-color: lightgray;
+  margin-bottom: 0.3em;
+}
+
+#lowerBox {
+  background-color: lightgray;
 }
 
 article, #lowerBox {
@@ -137,8 +142,9 @@ h4 {
   font-size: 0.8em;
 }
 
-.unitList > ul > li > a {
-  color: darkblue !important;
+.unitList a {
+  color: darkblue;
+  text-decoration: none;
   transition: 200ms;
 }
 
@@ -151,26 +157,13 @@ h4 {
 
 /*INDEX ANIMATIONS*/
 
-.unitList > ul > li > a:hover {
+.unitList a:hover {
   color: white !important;
 }
-
-.unitList ul li a:link {
-  color: black;
-  text-decoration: none;
-}
-
-.unitList ul li a:visited {
-color: black;
-}
-
-
-
 
 
 
 /*FOOTER*/
-/*social media hex: #231F20*/
 
 footer {
   background-color: #5B6C7D;
@@ -213,7 +206,7 @@ footer {
 
 
 /*PHONES*/
-/*Jenkiest Fix EVAR*/
+
 @media only screen and (max-device-width: 480px) {
   h1 {
     letter-spacing: 0;

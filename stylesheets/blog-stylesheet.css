@@ -2,6 +2,7 @@
 
 #bodyContent {
   padding-top: 10px;
+  background-color: lightgray;
 }
 
 h3 {
@@ -57,4 +58,8 @@ section img {
   margin-left: auto;
   margin-right: auto;
   width: 22em;
+}
+
+.upshoot {
+  font-size: 0.7em;
 }

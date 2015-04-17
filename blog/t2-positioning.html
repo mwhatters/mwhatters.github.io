@@ -8,12 +8,14 @@
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
 
   <link href='http://fonts.googleapis.com/css?family=Bitter|Inconsolata|Slabo+27px' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png"/>
+
 </head>
 
 <body>
 
   <div id="container">
-
+    <div id="top"></div>
     <header>
       <div id="mainTitle">
         <h1>I DON'T GIT IT</h1>
@@ -25,7 +27,7 @@
             <a class="menuButton" href="../under-construction.html">ABOUT ME</a>
             <a class="menuButton" href="../index.html#bottom">CULTURE</a>
             <a class="menuButton" href="../index.html#bottom">TECH&amp;MUSIC</a>
-            <a class="menuButton" href="../under-construction.html">CONTACT</a>
+            <a class="menuButton" href="../contact.html">CONTACT</a>
         </nav>
 
     </header>
@@ -93,7 +95,7 @@
     rules, we were freed with coordinate-graphing of our elements based on where they were located originally. But those elements still exist within a heiarchy of other elements, and they are still bound in many ways to where they are located within that hierarchy.
   </p>
   <p>
-    Absolute positioning is a means of saying no thank you to any sort of positional restrictions we might have previously seen with our elements. Instead of positioning the element relative to itself, it positions the element relative to its parent. This can be extremely useful, and it serves as a testament to the practicality of clearly containing sections of your website within containers. Containing a series of divs within a header, for example, allows us to manage those elements relative to the header position. When we choose an element to be absolutely positioned within the header, we are giving it the power to located itself within whatever parameters have already been set by the header div. This is invaluable for creating elements that stick to certain parts of your page.
+    Absolute positioning is a means of saying no thank you to any sort of positional restrictions we might have previously seen with our elements. Instead of positioning the element relative to itself, it positions the element relative to its parent, <strong><em>given that it's parent is relatively positioned</em></strong>. Otherwise, it will bypass the parent and position itself according to either the next relative container, or the body of the page. When we choose an element to be absolutely positioned within a relatively positioned container, we are giving it the power to located itself within whatever parameters have already been set by the header div. This is invaluable for creating elements that stick to certain parts of your page.
   </p>
 
     <h5>Understanding Fixed</h5>
@@ -120,8 +122,9 @@
   <p>
     To really get a grasp of how to navigate these positional declarations, hop into devtools, either Chrome or Firefox. I'm one to prefer the Firefox development tools but Chrome has got a great set of them as well, and both are robust. Related to positioning is the display declaration, as well as the layering tools (z-index) -- both can solve problems that positions cannot fully address. Once the seamless integration of these tools is realized, full CSS positioning zen shall be acheived.
   </p>
-        </section>
 
+  <a class="upshoot" href="#top">Back to Top</a>
+        </section>
     </div>
 
   <footer>
