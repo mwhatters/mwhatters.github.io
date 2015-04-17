@@ -90,17 +90,15 @@
     <h5>Understanding Absolutes</h5>
   <p>
     When we think of absolute positioning, we must first consider the powers we now have with relative positions. Where we were once bound to static
-    rules, we were freed with coordinate-graphing of our elements. But those elements still exist within a heiarchy of other elements, and they are still
-    bound in many ways to that hierarchy. What happens when we want to abandon the hierarchy all together? We go absolute.
+    rules, we were freed with coordinate-graphing of our elements based on where they were located originally. But those elements still exist within a heiarchy of other elements, and they are still bound in many ways to where they are located within that hierarchy.
   </p>
   <p>
-    Absolute positioning is a means of saying no thank you to any sort of positional restrictions we might have previously seen with our elements. While
-    being extremely useful as background elements or elements that exist in a part of a web page that stand unique from the general scheme, we must be careful with absolute positioning, as it is a powerful force, and we must recognize when to use it. Though creating something like <a href="../imgs/blog/absolute.png">this set of absolutely positioned divs</a> may be easy as pie, we need to first recognize that an elements <em>needs</em> to use absolute positioning to accomplish its goals. Legos are fun, but boring -- coordinates are empowering, but limiting as well. Absolute positioning allows you to surpass limits, but it should also be done with respect to the hierarchy established. A website thrown together with only absolute elements will not do. Finding their use when the time is right is when they come to be most powerful. Absolute works great for a sidebar, or an element stuck to a certain part of the page, be it a corner or something else.
+    Absolute positioning is a means of saying no thank you to any sort of positional restrictions we might have previously seen with our elements. Instead of positioning the element relative to itself, it positions the element relative to its parent. This can be extremely useful, and it serves as a testament to the practicality of clearly containing sections of your website within containers. Containing a series of divs within a header, for example, allows us to manage those elements relative to the header position. When we choose an element to be absolutely positioned within the header, we are giving it the power to located itself within whatever parameters have already been set by the header div. This is invaluable for creating elements that stick to certain parts of your page.
   </p>
 
     <h5>Understanding Fixed</h5>
   <p>
-    When we want, say, our navigation bar to be present to the user at all times of browsing, we might solve that problem by incorperating a fixed position. A fixed position functions similarly to that of an absolute one, with one crucial difference: fixed elements will scroll as you scroll.
+    When we wanr our navigation bar to be present to the user at all times of browsing, we might solve that problem by incorperating a fixed position. A fixed position functions similarly to that of an absolute one, with one crucial difference: fixed elements will scroll as you scroll.
     A fixed header will stay with you as you scroll down to the bottom of the page, visible at all times, with no way of hiding it (unless javascript
     elements are at play). Fixed elements can be stylistically desireable -- depending on the context, they can really turn a mediocre site into a professional one.
   </p>
