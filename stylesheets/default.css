@@ -213,7 +213,10 @@ footer {
 @media only screen and (max-device-width: 480px) {
   h1 {
     letter-spacing: 0;
-    font-size: 90%;
+  }
+
+  nav {
+    margin-left: -1em;
   }
 
   nav a {
