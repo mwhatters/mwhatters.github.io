@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>I Don't Git it | Blog | CSS Twister</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
+
+  <link href='http://fonts.googleapis.com/css?family=Bitter|Inconsolata|Slabo+27px' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <header>
+      <div id="mainTitle">
+        <h1>I DON'T GIT IT</h1>
+        <h2>a cultural &amp; coding diary</h2>
+      </div>
+
+        <nav>
+            <a class="menuButton" href="../index.html">HOME</a>
+            <a class="menuButton" href="#">ABOUT ME</a>
+            <a class="menuButton" href="../index.html#bottom">CULTURE</a>
+            <a class="menuButton" href="../index.html#bottom">TECH&amp;MUSIC</a>
+            <a class="menuButton" href="../index.html">CONTACT</a>
+        </nav>
+
+    </header>
+
+    <div id="bodyContent">
+
+
+        <h3>Playing Twister with CSS</h3>
+        <h4>April 16, 2015</h4>
+
+        <section>
+          <h5>Positioning and Layering</h5>
+
+  <p>
+    As most of us who/are were beginners with CSS will know, one of the more difficult challenges one must face as they struggle is
+    the pain of positioning. As someone who is familiar with CSS, but still an eager learner of the CSS zen workflow, I myself continue
+    to find myself in a near-boiling state of frustration as I shift elements around endlessly, getting seemingly nowhere, if not regressing.
+    it works much like a <a href="http://i.imgur.com/Q3cUg29.gif">window shade</a>.
+  </p>
+  <p>
+    Realizing that something as unfashionable as losing my cool in front of my computer is probably best avoided, I took it upon
+    myself to really jump into the world of <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code>, and
+    <code>inherited</code> positioning styles, understanding that, while I may not be a design expert, I can at least be a positioning expert,
+    zenfully constructing my pages with cool grace.
+  </p>
+
+    <h5>Understanding Static</h5>
+  <p>
+    Of all the articles I've read about, the best way to understand static elements is by using toy analogies. Namely, legos.
+  </p>
+    <p>
+    Static elements are like legos -- they are bound to their position in relation to other legos. They are located within a hierarchy of other
+    lego bricks, and they do not move. Consider <a href="../imgs/blog/static.png">this group of divs.</a>
+  </p>
+  <p>
+    Much like legos, these elements are bound to their position. They lack what we call "coordinate graphing" abilities. Static elements are
+    great for those simple, lego-like pieces. When we don't need to move them outside of the hierarchy that they exist within, then we can
+    rest easy.
+  </p>
+  <p>
+    Not often is this the case, however. What do we do if we need to bend the rules? Legos are fun, but they are limiting. Let's move on
+    to relative positioning, where we leave legos behind in favor of the imagination.
+  </p>
+
+    <h5>Understanding Relative</h5>
+  <p>
+    When we abondon the rules that bind us, we gain much more freedom, but unless considered wisely, it can quickly lead us into ruin.
+  </p>
+  <p>
+    Relative elements work very much like static ones, with one key difference: we can <em>move</em> them. When we have a relatively positioned,
+    element, coordinate styling, in the flavor of <code>top, bottom, right</code> and <code>left</code>, become tools in our toolbelt. No longer
+    are we bound by the elements that came before us. Consider <a href="../imgs/blog/relative.png">this group of relatively positioned divs.</a> Below
+    exists a very anemiic version of what the css would look like for the above example:
+  </p>
+  <p>
+    <img src="../imgs/blog/relativecode.png" alt="css styling of relative positioning"
+  </p>
+  <p>
+    Notice how our elements no longer adhere to the lego rules. They all now can move along their own x and y coordinates <em>relative</em> to their normal position. What we have is the ability to move these elements, while still understanding their relationship with their hierarchy, beyond the static rules that previously binded them. By taking advantage of display styles paired with the declarations mentioned earlier, we can shift elements from their original position to places entirely different. While we are still bound to the html hierarchy created, the way we can manipulate the elements has been expanded.
+  </p>
+
+    <h5>Understanding Absolutes</h5>
+  <p>
+    When we think of absolute positioning, we must first consider the powers we now have with relative positions. Where we were once bound to static
+    rules, we were freed with coordinate-graphing of our elements. But those elements still exist within a heiarchy of other elements, and they are still
+    bound in many ways to that hierarchy. What happens when we want to abandon the hierarchy all together? We go absolute.
+  </p>
+  <p>
+    Absolute positioning is a means of saying no thank you to any sort of positional restrictions we might have previously seen with our elements. While
+    being extremely useful as background elements or elements that exist in a part of a web page that stand unique from the general scheme, we must be careful with absolute positioning, as it is a powerful force, and we must recognize when to use it. Though creating something like <a href="../imgs/blog/absolute.png">this set of absolutely positioned divs</a> may be easy as pie, we need to first recognize that an elements <em>needs</em> to use absolute positioning to accomplish its goals. Legos are fun, but boring -- coordinates are empowering, but limiting as well. Absolute positioning allows you to surpass limits, but it should also be done with respect to the hierarchy established. A website thrown together with only absolute elements will not do. Finding their use when the time is right is when they come to be most powerful. Absolute works great for a sidebar, or an element stuck to a certain part of the page, be it a corner or something else.
+  </p>
+
+    <h5>Understanding Fixed</h5>
+  <p>
+    When we want, say, our navigation bar to be present to the user at all times of browsing, we might solve that problem by incorperating a fixed position. A fixed position functions similarly to that of an absolute one, with one crucial difference: fixed elements will scroll as you scroll.
+    A fixed header will stay with you as you scroll down to the bottom of the page, visible at all times, with no way of hiding it (unless javascript
+    elements are at play). Fixed elements can be stylistically desireable -- depending on the context, they can really turn a mediocre site into a professional one.
+  </p>
+  <p>
+    Fixed elements rarely have a use outside of header and footer contexts, but every once in a while you might see something pop up. It's important to notes the a fixed element might run into problems with older web browsers, as it is not a style that all of them can recognize. It might be useful to employ some HTML conditionals to style the page differently in light of an incompatible browser (old IE FTW!) -- either by providing alternative styling, or adding a disclaimer letting the user know that they are viewing your ultra-modern page on a shitty and old browsing device.
+  </p>
+
+  <p>
+    <h5>Understanding Inheritence</h5>
+  </p>
+  <p>
+    Inherited positions work very much like how children inherit traits from their parents. In fact, this concept is seen in many areas of programming. It's an easy enough concept to understand with CSS -- if a style has a position that inhertits, it will adopt the value of its parent div in the HTML hierarchy. This can be useful for quickly grouping together larger groups of alike elements or if you want to single out an instance of a span element by wrapping it in a div, but it should also be used deliberatly and with caution. Based on my understanding, it seems iheritance should be used with class elements, not ID elements.
+  </p>
+
+
+  <p>
+    <h5>A Final Note:</h5>
+  </p>
+  <p>
+    To really get a grasp of how to navigate these positional declarations, hop into devtools, either Chrome or Firefox. I'm one to prefer the Firefox development tools but Chrome has got a great set of them as well, and both are robust. Related to positioning is the display declaration, as well as the layering tools (z-index) -- both can solve problems that positions cannot fully address. Once the seamless integration of these tools is realized, full CSS positioning zen shall be acheived.
+  </p>
+        </section>
+
+    </div>
+
+  <footer>
+    <div id="contactInfo">
+      Made for DBC by your's truly.
+    </div>
+
+    <div id="socialLinks">
+      <a href="https://www.facebook.com/hattersley" target="_blank"><img src="../imgs/facebook.png" alt="Facebook!"></a>
+      <a href="https://twitter.com/mwhatters"  target="_blank"><img src="../imgs/twitter.png" alt="Twitter!">
+      <a href="https://instagram.com/mwhatters/" target="_blank"><img src="../imgs/instagram.png" alt="Instagram!">
+      <a href="https://www.linkedin.com/profile/preview?vpa=pub&amp;locale=en_US" target="_blank"><img src="../imgs/linkedin.png" alt="LinkedIn!">
+    </div>
+
+  </footer>
+
+
+  </div>
+
+
+</body>
+</html>

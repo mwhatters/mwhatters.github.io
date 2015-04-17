@@ -1,0 +1,179 @@
+/*shell css*/
+
+body {
+  margin: 0px;
+}
+
+
+/*HEADER*/
+
+#container {
+  width:    980px;
+  margin:   0 auto;
+}
+
+header {
+  background-color: #2D363F;
+  font-family: 'Bitter', serif;
+}
+
+#mainTitle {
+  width: 25%;
+  border-right: 1px solid white;
+  display: inline-block;
+  padding: 0.4em 0.7em 0.8em 1em;
+  color: lightgray;
+}
+
+h1 {
+  margin: 0px;
+  letter-spacing: 0.8px;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 80%;
+}
+
+nav {
+  position: relative;
+  display: inline-block;
+  bottom: 1em;
+  left: 1em;
+  margin-left: 1.5em;
+  color: white;
+}
+
+nav a {
+  margin-left: 2em;
+}
+
+.menuButton {
+  position: relative;
+  }
+
+.menuButton:link {
+  color: white;
+  text-decoration: none;
+}
+
+/*HEADER ANIMATIONS*/
+
+.menuButton:hover {
+  color: gray;
+}
+
+nav a:visited {
+  color: white;
+}
+
+/*BODY*/
+
+#bodyContent {
+  width: 950px;
+  margin: 0 auto;
+  font-family: 'Slabo 27px' serif;
+  background-color: lightgray;
+}
+
+#upperBox {
+  border-bottom: 3px  solid white;
+}
+
+article, #lowerBox {
+padding: 10px;
+}
+
+article img {
+  float: right;
+  margin: 5em 1.2em 2em 25px;
+  width: 300px;
+  height: 465px;
+  border: 2px solid gray;
+}
+
+article p {
+  margin-left: 1em;
+  margin-bottom: 2em;
+  font-size: 1.3em;
+
+}
+
+h3 {
+  font-family: 'Bitter', serif;
+  font-size: 3em;
+  margin-left: 0.4em;
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+}
+
+/*INDEX*/
+
+.unitList {
+  display: inline-block;
+  position: relative;
+  margin: 0em 0em 2em 2em;
+  font-size: 1.3em;
+  background-color: #989e8e;
+  border: 1px solid gray;
+  padding: 0em 2em 0.5em 1em;
+  font-family: 'Inconsolata';
+}
+
+.unitList ul {
+  list-style: square;
+}
+
+.unitList ul li {
+  margin-bottom: 0.1em;
+  padding-bottom: 0.3em;
+  font-size: 0.8em;
+}
+
+.unitList ul li a:link {
+  color: black;
+  text-decoration: none;
+}
+
+.unitList ul li a:visited {
+color: black;
+}
+
+
+
+
+/*FOOTER*/
+/*social media hex: #231F20*/
+
+footer {
+  background-color: #5B6C7D;
+  position:         relative;
+  font-family: 'Bitter', serif;
+  color: white;
+  min-height: 77px;
+}
+
+#contactInfo {
+  position: absolute;
+  left: 0px;
+  display: inline-block;
+  padding: 1.9em 2.1em;
+}
+
+#socialLinks {
+  position: absolute;
+  display: inline-block;
+  right: 0px;
+  border-left: 1pt solid white;
+  padding: 2px 5px 0px 10px;
+}
+
+#socialLinks img {
+  opacity: 0.8;
+}
+
+/*FOOTER ANIMATIONS*/
+
+#socialLinks img:hover {
+  opacity: 1;
+}
