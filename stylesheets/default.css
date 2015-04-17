@@ -205,3 +205,18 @@ footer {
 #socialLinks img:hover {
   opacity: 1;
 }
+
+
+
+/*PHONES*/
+
+@media only screen and (max-device-width: 480px) {
+  h1 {
+    letter-spacing: 0;
+    font-size: 90%;
+  }
+
+  nav a {
+    margin-left: 1.5em;
+  }
+}
