@@ -195,6 +195,10 @@ footer {
   padding: 2px 5px 0px 10px;
 }
 
+#socialLinks a {
+  text-decoration: none;
+}
+
 #socialLinks img {
   opacity: 0.8;
   transition: 200ms;
