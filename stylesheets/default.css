@@ -93,8 +93,6 @@ padding: 10px;
 article img {
   float: right;
   margin: 5em 1.2em 2em 25px;
-  width: 300px;
-  height: 465px;
   border: 2px solid gray;
 }
 
@@ -167,25 +165,24 @@ h4 {
 
 footer {
   background-color: #5B6C7D;
-  position:         relative;
   font-family: 'Bitter', serif;
   color: white;
-  min-height: 77px;
+  overflow: hidden;
+  width: 100%;
 }
 
 #contactInfo {
-  position: absolute;
   left: 0px;
   display: inline-block;
-  padding: 1.9em 2.1em;
+  padding: 2.1em 2.1em 2em 2.1em;
 }
 
 #socialLinks {
-  position: absolute;
   display: inline-block;
+  float: right;
   right: 0px;
   border-left: 1pt solid white;
-  padding: 2px 5px 0px 10px;
+  padding: 5px 10px 0px 10px;
 }
 
 #socialLinks a {
