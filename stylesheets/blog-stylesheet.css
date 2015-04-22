@@ -40,7 +40,8 @@ h5, h6 {
 
 h6 {
   font-size: 1.7em;
-  color: green;
+  color: darkgreen;
+  text-indent: 50px;
 }
 
 p {
