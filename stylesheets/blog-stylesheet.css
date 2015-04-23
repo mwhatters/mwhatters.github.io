@@ -58,15 +58,11 @@ a:hover {
 }
 
 section img {
-  position: relative;
-  left: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
-  max-width: 300px;
-  max-height: 170px;
-  width: 22em;
+  margin-top: 5px;
 }
 
 .upshoot {

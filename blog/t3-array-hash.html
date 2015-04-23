@@ -41,10 +41,10 @@
         <section>
 
         <p>
-          In understanding Ruby, one must first understand the powers that Ruby holds. In order to attain true Ruby maastery, one must be able to handle and manipulate its objects in ways that allow them to quickly parse through and order data and data sets. And from this need to manipulate sets of data, spawns the two essential tools in the programmers toolbelt: the array, and the hash. In this post I intend to explore how the Array and the Hash can be manipulated within the Ruby programming language.
+          In understanding Ruby, one must first understand the powers that Ruby holds. In order to attain true Ruby mastery, one must be able to handle and manipulate its objects in ways that allow them to quickly parse through and order data and data sets. And from this need to manipulate sets of data spawns the two essential tools in the programmers toolbelt: the array, and the hash. In this post I intend to explore how the Array and the Hash can be manipulated within the Ruby programming language.
         </p>
 
-          <h5>Array of Light</h5>
+          <h5>&diams; Array of Light &diams;</h5>
 
           <p>
             An array is my favorite thing. It is a powerful tool in a programmers arsenal, and though most all languages possess them, the ruby array
@@ -64,7 +64,9 @@
               <ul>
                 <li>array.sort -- returns an array of strings or numbers into order, from a -> z or 1 -> infinity, respectively. The objects in this array must be compatible with each other in order for the sort to work! (Ruby's sorting algorithm is a quicksort, for those sorting algorithm nerds...)</li>
                 <li>array.uniq -- returns an array with any duplicated elements removed. For example:</li>
-                <img src="..imgs/blog/t3-uniq.png" alt="Using the .uniq method on an array">
+                <br>
+                <img src="../imgs/blog/t3-uniq.png" alt="Using the .uniq method on an array">
+                <br>
                 <li>array.each { action } -- iterates over an and performs an action to each element of the array. Note that this is different than collect! Read the ruby docs for a proper comparison.</li>
                 <li>Too many more to do within a reasonable amount of time</li>
               </ul>
@@ -76,7 +78,7 @@
           <p>
             A hash is not my favorite thing. But I greatly understand it's importance. Known as a dictionary in Python, or simply called an object in Javascript, a Ruby Hash is first and foremost a way of organizing key-pair values, represented as follows:
           </p>
-          <img src="../imgs/blog/t3-hash-smoke" alt="A basic ruby hash">
+          <img src="../imgs/blog/t3-hash-smoke.png" alt="A basic ruby hash">
           <p>
             Notice the (:name)? That's what we call a key (the actual key object we use can be a string, but in Ruby we prefer to use symbols -- once a symbol is used, that data value is cached, thus saving memory when called again). A key has an associated value of a string, or an integer, or even another hash or array. It can become quickly mindblowing, but let's wait till later.
           </p>
@@ -88,11 +90,10 @@
 
           <p>
             To finish off this blog post, it should be noted that Arrays and Hashes are so powerful in that they can cotnain each other as parts of each other. It's difficult to put in the words so let me just finish this off with a few fun images that highlight the many possibilities of the array and the hash!
+          </p>
+          <img src="../imgs/blog/t3-advanced-array.png" alt="an advanced array">
+          <img src="../imgs/blog/t3-advanced-hash.png" alt="an advanced hash">
           <p>
-
-            <img src="../imgs/blog/t3-advanced-array.png" alt="an advanced array">
-            <img src="../imgs/blog/t3-advanced-hash.png" alt="an advanced hash">
-
             The power... the future...
           </p>
 
