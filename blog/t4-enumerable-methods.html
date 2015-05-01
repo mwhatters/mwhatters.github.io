@@ -35,7 +35,7 @@
     <div id="bodyContent">
 
 
-        <h3>The Glories of Grouping</h3>
+        <h3>Grouping Glories</h3>
         <h4>April 30, 2015</h4>
 
 
@@ -80,7 +80,7 @@
 
           <h5>One thing to consider</h5>
 
-              <p>It might be surprising to hear that, despite the prettiness of our second method, it is, in fact, much, MUCH slower than the original solution that I came up with my pairing partner. And despite it's alluring nature, I ultimately decided to ditch the second method in favor of the first (and thus attempt to prettify it), even though I was so much happier with how our second method looked. Turns out, pretty code doesn't equate to perfect code, and here's why:</p>
+              <p>It might be surprising to hear that, despite the prettiness of our second method, it is, in fact, much, MUCH slower than the original solution that I came up with my pairing partner. And despite it's alluring nature, I ultimately decided to ditch the second method in favor of the first (and thus attempt to fix it up a bit more), even though I was so much happier with how our second method looked. Turns out, pretty code doesn't equate to perfect code, and here's why:</p>
 
               <p>Consider the number of iterations performed in each method. We can see that in mode method #1, we perform about 3 -- we iterate once through the array to calculate the frequency of numbers (by adding one to it's associated key every time it is visited in the array). This iteration happens once, and only once. The second iteration we use is found in the sort_by method, where we sort the hash by value, outputting a 2d array. Ruby's sorting methos uses a quicksort, a pretty fast and effective sorting algorithm. The final iteration is again a once-through, testing each element in the array against the value that has the most frequency. That's three iterations total. We're looking at a runtime of (if my terrible math serves me correctly) O(n). A linear runtime, as the number of iterations do not increase based on the dataset, though they will take longer given the size of the argument.</p>
 
