@@ -88,7 +88,7 @@
 
               <p>Consider mode method number 2. For each element in the array, a .count is being run to determine how many times that element appears in the given array. one .count will iterate through the whole array. If we have an array of four items, we would run four iterations though the array. That's already more than the number of iterations passed through the previous method. For an array of 10 items, we would have to iterate through the entire array *10* times. This may not seem like a big deal when handling smaller inputs, but what if we wanted to calculate the mode of an array with 200,000 elements in it? Not only that, we are running a .max through the output hash, which adds an additional iteration over the <em>absurdley</em> increasing number of iterations we'd have to perform prior. Running a benchmark comparison of these two methods showed that an array with one million elements (each element being a random number between 1 and 1000) that could be computed in .31 seconds with method #1.</p>
 
-              <p>Method #2, for the same exact calculation, took <u>47 seconds</u> to complete. If my shitty math and understanding of Big O notation is correct, we're looking at a runtime of O(n2). Not looking good for the sexy code.</p>
+              <p>Method #2, for the same exact calculation, took <u>47 seconds</u> to complete. If my shitty math and understanding of Big O notation is correct, we're looking at a runtime of O(n2). That's exponentially increasing runtime based on the length of the array. Not looking good for the sexy code.</p>
 
           <h6>The Takeaway</h6>
 
