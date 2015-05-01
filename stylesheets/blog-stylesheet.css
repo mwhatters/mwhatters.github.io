@@ -48,6 +48,23 @@ p {
   text-indent: 50px;
 }
 
+ol {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+li {
+  padding-bottom: 10px;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+code {
+  font-size: 0.9em;
+  font-family: courier;
+  /*background-color: #F5F5DC;*/
+  padding: 1px;
+}
+
 a:link {
   text-decoration: none;
   color: purple;

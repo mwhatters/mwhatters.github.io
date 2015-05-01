@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>I Don't Git it | Blog | Group_By <!--add title--></title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
+
+  <link href='http://fonts.googleapis.com/css?family=Bitter|Inconsolata|Slabo+27px' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png"/>
+
+</head>
+
+<body>
+
+  <div id="container">
+
+    <header>
+      <div id="mainTitle">
+        <h1>I DON'T GIT IT</h1>
+        <h2>a cultural &amp; coding diary</h2>
+      </div>
+
+        <nav>
+            <a class="menuButton" href="../index.html">HOME</a>
+            <a class="menuButton" href="../aboutme.html">ABOUT ME</a>
+            <a class="menuButton" href="../index.html#bottom">CULTURE</a>
+            <a class="menuButton" href="../index.html#bottom">TECH&amp;MUSIC</a>
+            <a class="menuButton" href="../contact.html">CONTACT</a>
+        </nav>
+
+    </header>
+
+    <div id="bodyContent">
+
+
+        <h3>The Glories of .group_by</h3>
+        <h4>April 30, 2015</h4>
+
+        <section>
+
+          <p>Before we get into taking a closer look at this powerful method, lets preface our talk with an inspection of two methods that solve the same problem. We'll be looking at the work done for the mandatory pairing challenge this week 'calculate the mode', in which we were asked to, given an array as an input, output an array of the values that occur most frequently.</p>
+
+          <p>Before I discovered the group_by method, my pairing partner and I found a pretty viable solution:</p>
+          <img src="../imgs/blog/t4-mode1.png">
+
+          <p>It's definitely a good solution, if not a bit difficult to understand, so let's break this method down, one item at a time:
+              <ol>
+                <li>We instantiate a new empty hash and array object, defined as <code>counter</code> and <code>output</code>, respectively. </li>
+                <li>We iterate through the first array, adding a new key/pair value to <code>counter</code> if not present, and adding one to the value of the associated key if it is present.</li>
+                <li>We sort the <code>counter</code> hash by frequency (v) and have that result (a 2d array output of key and value pairs) assigned to the <code>sorted</code> variable.  </li>
+                <li>For each element of <code>sorted</code>, we append it to the once-empty <code>output</code> array, only if the frequency (v) of the key matched the frequency of the most frequent occuring item in the 2d array. This is ran to ensure that elements that appear with equal frequency will both be appended to the output array.</li>
+                <li>Once each element that matches these parameters of the last iteration is appended to the output, we return the <code>output</code> array, containing each key value that appears the most in the original argument.</li>
+              </ol></p>
+
+              <p>That's quite a bit of logic! Though a viable solution (we clearly needed to define our block parameters more explicitely), the amount of steps that are required to generate the working output is pretty big. After giving it a day to think about and read through the Well-Grounded Rubyist a bit more, a glorious realization came to me that we were doing it all wrong. Why assign the keys to item in the array and the value to it's occurence? What if we assign the key to the frequency of the item, and the value to be an array of the items that have that frequency? This is where the group_by method came into play. Observe the following solution to the same problem:</p>
+              <img src="../imgs/blog/t4-mode2.png">
+
+              <p>Pretty clean, eh? There's actually a decieving amount of work being done in these two lines of code, so let's break it down again, first by explaining what exactly the group_by method is doing.</p>
+
+              <p><code>group_by</code> is a method that operates on an enumerable object and returns a hash. It takes a block, using it to iterate through the array. For every item in the array that returns a unique value in the block, a key/pair is generate, the key being the unique value that is block generates, the value being the element in the array that generated the unique value. Let's take a look at a basic example. Consider the following array:</p>
+
+              <code>foo = [1,2,3,4,5,6]</code>
+
+              <p>And let's imagine that we want to create a hash that will tell us what elements of this array are greater than 3, and which elements are not greater than three. We can use <code>group_by</code> to generate a key of true and false, based on the result of the block expresion, with each value containing the items in the array that returned true or false, respectively.</p>
+
+              <code>foo.group_by { |number| number > 3 }</code>
+              <br>
+              <code style="color: red"># => {false=>[1, 2, 3], true=>[4, 5, 6]}</code>
+
+              <p>Now that we can see how <code>group_by</code> will generate out hash, we can see that the first line of our refactored method will turn the input array into a hash of keys associated with the frequency of the item in the array (<code>array.count(item)</code>) and values with arrays. if <code>array = [1,1,1,2,2,4,4,4]</code>, our output would be:</p>
+
+              <code>{3=>[1,1,1,4,4,4], 2=>[2,2]</code>
+
+              <p>The second line of code performs a .max on the resulting frequencies hash, outputting a 2d array (in the above case it would be <code>[3, [1,1,1,4,4,4]</code>), and then subsequently returning the second element of that array, but removing any repeat elements (resulting in and ultimatey returning the correct answer: <code>[1,4]</code>).</p>
+
+              <p>Two lines of code, versus 7. About three steps of logic, versus 5.</p>
+
+          <h5>One thing to consider</h5>
+
+              <p>It might be surprising to hear that, despite the prettiness of our second method, it is, in fact, much, MUCH slower than the original solution that I came up with my pairing partner. And despite it's alluring nature, I ultimately decided to ditch the second method in favor of the first (and thus attempt to prettify it), even though I was so much happier with how our second method looked. Turns out, pretty code doesn't equate to perfect code, and here's why:</p>
+
+              <p>Consider the number of iterations performed in each method. We can see that in mode method #1, we perform about 3 -- we iterate once through the array to calculate the frequency of numbers (by adding one to it's associated key every time it is visited in the array). This iteration happens once, and only once. The second iteration we use is found in the sort_by method, where we sort the hash by value, outputting a 2d array. Ruby's sorting methos uses a quicksort, a pretty fast and effective sorting algorithm. The final iteration is again a once-through, testing each element in the array against the value that has the most frequency. That's three iterations total. We're looking at a runtime of (if my terrible math serves me correctly) O(n). A linear runtime, as the number of iterations do not increase based on the dataset, though they will take longer given the size of the argument.</p>
+
+          <h6>It's all about the Iterations</h6>
+
+              <p>Consider mode method number 2. For each element in the array, a .count is being run to determine how many times that element appears in the given array. one .count will iterate through the whole array. If we have an array of four items, we would run four iterations though the array. That's already more than the number of iterations passed through the previous method. For an array of 10 items, we would have to iterate through the entire array *10* times. This may not seem like a big deal when handling smaller inputs, but what if we wanted to calculate the mode of an array with 200,000 elements in it? Not only that, we are running a .max through the output hash, which adds an additional iteration over the <em>absurdley</em> increasing number of iterations we'd have to perform prior. Running a benchmark comparison of these two methods showed that an array with one million elements (each element being a random number between 1 and 1000) that could be computed in .31 seconds with method #1.</p>
+
+              <p>Method #2, for the same exact calculation, took <u>47 seconds</u> to complete. If my shitty math and understanding of Big O notation is correct, we're looking at a runtime of O(n2). Not looking good for the sexy code.</p>
+
+          <h6>The Takeaway</h6>
+
+              <p>Pretty code is alluring. Elegant solutions are desireable. But if an elegant solution has an ugly runtime, it's better to try and refactor the algorithm that worked more efficiently than to stick with the solution that could be one-lined. I think there's a certain amount of pride associated with being able to do something using the least number of lines, but in that pursuit, we forget to remember that, though seemingly simple, the actual work being done is far greater than what we think might be happening. This was a huge revelation for me as I worked on the problem, and I find great value in letting go of my ability to find the "prettiest" or "quickest" answer to a problem. </p>
+
+
+              <p>Good code does not have to be short, or minimal, to be elegant. Nor should it be. The elegence of a solution lies in the clarity of the variables used and the algorithm employed to produce the output. Ruby's alluring methods must be used with caution if they are to be employed.</p>
+
+        <a class="upshoot" href="#top">Back to Top</a>
+        </section>
+
+    </div>
+
+  <footer>
+    <div id="contactInfo">
+      Made for DBC by Marshall Hattersley
+    </div>
+
+    <div id="socialLinks">
+      <a href="https://www.facebook.com/hattersley" target="_blank"><img src="../imgs/facebook.png" alt="Facebook!"></a>
+      <a href="https://twitter.com/mwhatters"  target="_blank"><img src="../imgs/twitter.png" alt="Twitter!">
+      <a href="https://instagram.com/mwhatters/" target="_blank"><img src="../imgs/instagram.png" alt="Instagram!">
+      <a href="https://www.linkedin.com/profile/preview?vpa=pub&amp;locale=en_US" target="_blank"><img src="../imgs/linkedin.png" alt="LinkedIn!">
+    </div>
+
+  </footer>
+
+
+  </div>
+
+
+</body>
+</html>
