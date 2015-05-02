@@ -49,7 +49,7 @@
           <p>It's definitely a good solution, if not a bit difficult to understand, so let's break this method down, one item at a time:
               <ol>
                 <li>We instantiate a new empty hash and array object, defined as <code>counter</code> and <code>output</code>, respectively. </li>
-                <li>We iterate through the input array, adding a new key/pair value to <code>counter</code> if not present, and adding one to the value of the associated key if it is present.</li>
+                <li>We iterate through each element of the input array, adding a new key/pair value to <code>counter</code> if the element is not present, and adding one to the value of the associated key if it is present.</li>
                 <li>We sort the <code>counter</code> hash by frequency (<code>v</code>) and have that result (a 2d array output of key and value pairs) assigned to the <code>sorted</code> variable.  </li>
                 <li>For each element of <code>sorted</code>, we append it to the once-empty <code>output</code> array, only if the frequency of the key matched the frequency of the most frequent occuring item in the 2d array. This is ran to ensure that elements that appear with equal frequency will both be appended to the output array.</li>
                 <li>Once each element that matches these parameters is appended to the output, we return the <code>output</code> array, containing each key that appears the most in the original argument.</li>
