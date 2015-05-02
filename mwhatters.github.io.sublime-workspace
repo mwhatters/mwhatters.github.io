@@ -531,7 +531,15 @@
 			"file": "/Users/MHatters/.bash_profile",
 			"settings":
 			{
-				"buffer_size": 3229,
+				"buffer_size": 3309,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/c4-tech-issues.html",
+			"settings":
+			{
+				"buffer_size": 8094,
 				"line_ending": "Unix"
 			}
 		}
@@ -786,7 +794,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -822,20 +830,48 @@
 					"file": "/Users/MHatters/.bash_profile",
 					"settings":
 					{
-						"buffer_size": 3229,
+						"buffer_size": 3309,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								192,
-								192
+								3231,
+								3231
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1078.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "blog/c4-tech-issues.html",
+					"settings":
+					{
+						"buffer_size": 8094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4003,
+								4003
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
