@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"op",
+				"opposite"
+			],
+			[
 				"side",
 				"side_length"
 			],
@@ -510,10 +514,6 @@
 			[
 				"fullchord",
 				"fullchord_list"
-			],
-			[
-				"ful",
-				"fullchord_dict"
 			]
 		]
 	},
@@ -523,15 +523,7 @@
 			"file": "blog/t6-oop-concepts.html",
 			"settings":
 			{
-				"buffer_size": 2529,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "\n\nmodule Birth\n  attr_reader :age\n  def birthyear\n    Time.now.year\n  end\n\nend\n\n\nclass Person\n  extend Birth\n  attr_reader :age, :gender, :favorite_things\n  def initialize(args)\n    @age = args[:age]\n    @gender = args[:gender]\n  end\n\n  def of_age?\n    \n\n\n\nend\n\n\nclass Dog\n  include \n  attr_reader :age\n  #...\nend\n\n",
-			"settings":
-			{
-				"buffer_size": 315,
+				"buffer_size": 6104,
 				"line_ending": "Unix"
 			}
 		}
@@ -588,11 +580,11 @@
 	},
 	"file_history":
 	[
+		"/Users/MHatters/Programming/DevBootcamp/Phase-0/Unit-1/mwhatters.github.io/index.html",
 		"/Users/MHatters/Programming/DevBootcamp/Phase-0/Unit-1/mwhatters.github.io/blog/c4-tech-issues.html",
 		"/Users/MHatters/.bash_profile",
 		"/Users/MHatters/Programming/DevBootcamp/Phase-0/Unit-1/ruby-practice/week-3/miscellaneous/ruby-class.rb",
 		"/Users/MHatters/Programming/DevBootcamp/Phase-0/Unit-1/mwhatters.github.io/stylesheets/default.css",
-		"/Users/MHatters/Programming/DevBootcamp/Phase-0/Unit-1/mwhatters.github.io/index.html",
 		"/Users/MHatters/Programming/git-projects/csi-generator/.git/COMMIT_EDITMSG",
 		"/Users/MHatters/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/MHatters/Programming/DevBootcamp/Phase-0/Unit-1/ruby-practice/week-3/miscellaneous/min-sortby-benchmark.rb",
@@ -786,7 +778,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -794,15 +786,15 @@
 					"file": "blog/t6-oop-concepts.html",
 					"settings":
 					{
-						"buffer_size": 2529,
+						"buffer_size": 6104,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1491,
-								1481
+								1868,
+								1868
 							]
 						],
 						"settings":
@@ -812,34 +804,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 215.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"settings":
-					{
-						"buffer_size": 315,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								253,
-								253
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 507.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

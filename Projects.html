@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="./stylesheets/default.css" />
   <link rel="stylesheet" type="text/css" href="./stylesheets/blog-stylesheet.css" />
+  <link rel="stylesheet" type="text/css" href="./Tic-Tac-Toe/template.css" />
   <link href='http://fonts.googleapis.com/css?family=Bitter|Inconsolata|Slabo+27px' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" type="image/png" href="./imgs/favicon.png"/>
 
@@ -33,12 +34,42 @@
 
     <div id="bodyContent">
 
-
+        <!-- TIC TAC TOE -->
         <section>
           <br />
-          <h5>WORKING ON IT!</h5>
+          <h1>Tic Tac Toe</h1>
+            <h2 style="color: blue;">Player One -- X</h2>
+            <h2 style="color: red">Player Two -- O</h2>
+            <h3 id="turn">Player one move to start!</h3>
 
-          <p>This page has yet to have been made. Forgive me.</p>
+          <table id="board" border="1">
+            <tr class="row">
+              <td><button id="cell-00" type="button"></button></td>
+              <td><button id="cell-01" type="button"></button></td>
+              <td><button id="cell-02" type="button"></button></td>
+            </tr>
+
+            <tr class="row">
+              <td><button id="cell-10" type="button"></button></td>
+              <td><button id="cell-11" type="button"></button></td>
+              <td><button id="cell-12" type="button"></button></td>
+            </tr>
+
+            <tr class="row">
+              <td><button id="cell-20" type="button"></button></td>
+              <td><button id="cell-21" type="button"></button></td>
+              <td><button id="cell-22" type="button"></button></td>
+            </tr>
+          </table>
+
+        <div id="gameControls">
+          <!-- <button id="reset">Reset</button> -->
+          <button id="startNew">Start New Game</button><br>
+
+          <p>Wins for player one: <div id="P1Wins">0</div></p>
+          <p>Wins for player two: <div id="P2Wins">0</div></p>
+
+        </div>
         </section>
 
     </div>
@@ -62,4 +93,6 @@
 
 
 </body>
+
+<script src="./Tic-Tac-Toe/my_solution.js"></script>
 </html>

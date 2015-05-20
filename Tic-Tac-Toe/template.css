@@ -1,0 +1,59 @@
+/*tic-tac-toe css*/
+
+#board {
+  /*text-align: center;*/
+}
+
+#bodyContent {
+  margin: auto auto;
+  text-align: center;
+}
+
+
+h1 {
+  font-style: bold;
+  font-size: 2em;
+}
+
+
+h3 {
+  font-size: 1.5em;
+  border: 0;
+  color: green;
+}
+
+table {
+  margin: auto auto;
+}
+
+table button {
+  border: 0;
+  background-color: white;
+  font-size: 3em;
+  width: 100px;
+  height: 100px;
+}
+
+button:hover {
+  background-color: lightgreen;
+}
+
+#gameControls button {
+  margin: 2em 1em;
+  border: 0;
+  font-size: inherit;
+}
+
+#P1Wins, #P2Wins, p {
+  display: inline;
+  font-size: 1.5em;
+}
+
+#P1Wins {
+  color: blue;
+  margin-right: 1em;
+}
+
+#P2Wins {
+  color: red;
+}
