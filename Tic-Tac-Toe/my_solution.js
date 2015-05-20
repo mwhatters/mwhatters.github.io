@@ -94,7 +94,7 @@ function startGame() {
       gameboard[row][column].textContent = "";
     }
   }
-  turn.textContent = "Player one move to start!";
+  turn.textContent = "Ready?";
 }
 
 
@@ -110,13 +110,19 @@ function makeMove() {
     return console.log("Invalid Move");
   }
   winCheck();
-  tieCheck();
+  if (gamewon == false) {
+    tieCheck();
+  } else {
+    gamewon = false;
+  }
 }
 
 //WIN OR TIE GAME?
 
+var gamewon = false;
 function winCheck() {
   if (winGameVertical(0,0) == true || winGameHorizontal(0,0) == true || winGameLeftToRight(2,0) == true || winGameRightToLeft(0,0) == true) {
+    gamewon = true;
     if (symbol == playerOne.marker) {
         P1WinsNum += 1;
         P1Wins.innerHTML = P1WinsNum.toString();
@@ -133,6 +139,7 @@ function winCheck() {
     } else {
         turn.textContent = "Your turn player " + playerOne.name + ": X";
     }
+  return gamewon
 }
 
 function tieCheck() {
@@ -149,8 +156,8 @@ function tieCheck() {
   }
 }
 
-//if winCheck finds a win, THEN (line 127):
-
+//if winCheck finds a win, THEN:
+// prevent more moves from being made.
 function fillBoard() {
   for (row=0; row < 3; row++) {
     for (column=0; column < 3; column++) {
