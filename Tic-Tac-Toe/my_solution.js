@@ -3,16 +3,16 @@
 // This is a solo challenge
 
 // Your mission description: create a basic tic-tac-toe game, with win conditions included. Two people can play the game.
-// Overall mission: Creating a working tic-tac-toe game that keeps score, determines ties and winners,
+// Overall mission: Creating a working tic-tac-toe game that keeps score, determines ties and winners.
 // Goals:
   // 1 -- Clickable, interactive board.
   // 2 -- Win conditions
   // 3 -- tie conditions
-  // 4 -- reset game functionality
-// Characters:
+  // 4 -- start a new game after a win/tie
+// Characters: n/a
 // Objects:
     // 1 -- the board itself, containing 9 distinct cells
-    // 2 --
+    // 2 -- player objects
 // Functions:
     // 1 -- event handling for clicking a cell, turning it either x or o based on players turn.
     // 2 -- win conditions function, called each time a move is made -- if board is full, return tie game
@@ -39,106 +39,304 @@
 // Initial Code
 
 // board variables
-var cell00 = document.getElementById('cell-00');
-cell00.addEventListener("click", makeMove, false);
+// var cell00 = document.getElementById('cell-00');
+// cell00.addEventListener("click", makeMove, false);
 
-var cell01 = document.getElementById('cell-01');
-cell01.addEventListener("click", makeMove, false);
+// var cell01 = document.getElementById('cell-01');
+// cell01.addEventListener("click", makeMove, false);
 
-var cell02 = document.getElementById('cell-02');
-cell02.addEventListener("click", makeMove, false);
+// var cell02 = document.getElementById('cell-02');
+// cell02.addEventListener("click", makeMove, false);
 
-var cell10 = document.getElementById('cell-10');
-cell10.addEventListener("click", makeMove, false);
+// var cell10 = document.getElementById('cell-10');
+// cell10.addEventListener("click", makeMove, false);
 
-var cell11 = document.getElementById('cell-11');
-cell11.addEventListener("click", makeMove, false);
+// var cell11 = document.getElementById('cell-11');
+// cell11.addEventListener("click", makeMove, false);
 
-var cell12 = document.getElementById('cell-12');
-cell12.addEventListener("click", makeMove, false);
+// var cell12 = document.getElementById('cell-12');
+// cell12.addEventListener("click", makeMove, false);
 
-var cell20 = document.getElementById('cell-20');
-cell20.addEventListener("click", makeMove, false);
+// var cell20 = document.getElementById('cell-20');
+// cell20.addEventListener("click", makeMove, false);
 
-var cell21 = document.getElementById('cell-21');
-cell21.addEventListener("click", makeMove, false);
+// var cell21 = document.getElementById('cell-21');
+// cell21.addEventListener("click", makeMove, false);
 
-var cell22 = document.getElementById('cell-22');
-cell22.addEventListener("click", makeMove, false);
+// var cell22 = document.getElementById('cell-22');
+// cell22.addEventListener("click", makeMove, false);
 
-var board = document.getElementById('board')
+// var board = document.getElementById('board')
+// var turn = document.getElementById('turn');
+
+// var gameboard = [ [cell00, cell01, cell02],
+//                   [cell10, cell11, cell12],
+//                   [cell20, cell21, cell22] ];
+
+// var playerOne = {name: "one", marker: "X"};
+// var playerTwo = {name: "two", marker: "O"};
+// var symbol = "O";
+
+
+// var P1Wins    = document.getElementById('P1Wins')
+// var P2Wins    = document.getElementById('P2Wins')
+// var P1WinsNum = Number(document.getElementById('P1Wins').textContent)
+// var P2WinsNum = Number(document.getElementById('P2Wins').textContent)
+
+
+// //START GAME
+// var start = document.getElementById('startNew');
+// start.addEventListener("click", startGame, false);
+
+// function startGame() {
+//   for (row=0; row < 3; row++) {
+//     for (column=0; column < 3; column++) {
+//       gameboard[row][column].textContent = "";
+//     }
+//   }
+//   turn.textContent = "Ready?";
+// }
+
+
+// function makeMove() {
+//   if (this.textContent == "") {
+//        if (symbol == "O") {
+//            symbol =  "X";
+//      } else if (symbol == "X") {
+//                 symbol =  "O";
+//      }
+//       this.textContent = symbol;
+//   } else {
+//     return console.log("Invalid Move");
+//   }
+//   winCheck();
+//   if (gamewon == false) {
+//     tieCheck();
+//   } else {
+//     gamewon = false;
+//   }
+// }
+
+// //WIN OR TIE GAME?
+
+// var gamewon = false;
+// function winCheck() {
+//   if (winGameVertical(0,0) == true || winGameHorizontal(0,0) == true || winGameLeftToRight(2,0) == true || winGameRightToLeft(0,0) == true) {
+//     gamewon = true;
+//     if (symbol == playerOne.marker) {
+//         P1WinsNum += 1;
+//         P1Wins.innerHTML = P1WinsNum.toString();
+//     } else {
+//         P2WinsNum += 1;
+//         P2Wins.innerHTML = P2WinsNum.toString();
+//     }
+//         fillBoard();
+//         result = false;
+//         symbol = "O";
+//         return turn.textContent = "WE HAVE A WINNER!";
+//     } else if (symbol == playerOne.marker) {
+//         turn.textContent = "Your turn player " + playerTwo.name + ": O";
+//     } else {
+//         turn.textContent = "Your turn player " + playerOne.name + ": X";
+//     }
+//   return gamewon
+// }
+
+// function tieCheck() {
+//   filledSlots = 0
+//   for (row=0; row < 3; row++) {
+//     for (column=0; column < 3; column++) {
+//       if (gameboard[row][column].textContent !== "" && gameboard[row][column].textContent !== " ") {
+//         filledSlots += 1;
+//       }
+//     }
+//   }
+//   if (filledSlots == 9) {
+//     turn.textContent = "Looks like a tie... Start a new game!";
+//   }
+// }
+
+// //if winCheck finds a win, THEN:
+// // prevent more moves from being made.
+// function fillBoard() {
+//   for (row=0; row < 3; row++) {
+//     for (column=0; column < 3; column++) {
+//       if (gameboard[row][column].textContent == "") {
+//         gameboard[row][column].textContent = " ";
+//       }
+//     }
+//   }
+// }
+
+// //WIN CONDITIONS:
+// // I basically remade the code I had for the ruby bingo challenge for javascript. Javascript recursion FTW.
+// // some interesting differences in how returns work, tripped me up for a bit here!
+// var result = false;
+// function winGameVertical(row, column) {
+//     if (row == (gameboard.length)) {
+//       console.log("WIN FOR PLAYER " + symbol + "! VERTICAL!");
+//       result = true;
+//       return true;
+
+//   } else if (column == 3) {
+//       return false;
+
+//   } else if (gameboard[row][column].textContent == symbol) {
+//       row += 1;
+//       winGameVertical(row, column);
+
+//   } else if (column < gameboard.length) {
+//       column += 1;
+//       row = 0;
+//       winGameVertical(row, column);
+//   }
+//   return result;
+// }
+
+// function winGameHorizontal(row,column) {
+//     if (column == (gameboard.length)) {
+//       console.log("WIN FOR PLAYER " + symbol + "! HORIZONTAL");
+//       result = true;
+//       return true;
+
+//   } else if (row == 3) {
+//       return false;
+
+//   } else if (gameboard[row][column].textContent == symbol) {
+//       column += 1;
+//       winGameHorizontal(row, column);
+
+//   } else if (row < gameboard.length) {
+//       row += 1;
+//       column = 0;
+//       winGameHorizontal(row, column);
+//   }
+//   return result;
+// }
+
+// function winGameLeftToRight(row, column) {
+//     if (row == -1) {
+//       console.log("WIN FOR PLAYER " + symbol + "! LEFT TO RIGHT -->");
+//       result = true;
+//       return true;
+
+//   } else if (gameboard[row][column].textContent == symbol) {
+//       column += 1;
+//       row -= 1;
+//       winGameLeftToRight(row, column);
+
+//   } else {
+//       return false;
+//   }
+//   return result;
+// }
+
+// function winGameRightToLeft(row, column) {
+//     if (row == 3) {
+//       console.log("WIN FOR PLAYER " + symbol + "! RIGHT TO LEFT <--");
+//       result = true;
+//       return true;
+
+//   } else if (gameboard[row][column].textContent == symbol) {
+//       column += 1;
+//       row += 1;
+//       winGameRightToLeft(row, column);
+
+//   } else {
+//       return false;
+//   }
+//   return result;
+// }
+
+
+// Refactored Code -- includes changing of html code:
+// Biggest refactor: make a function (createBoardVariables) that generates my cell variables.
+
+// board variables
+function createBoardVariables() {
+  var cellbank = [];
+  for (i=0; i < 9; i++) {
+    cellbank[i] = document.getElementById("cell" + i);
+    cellbank[i].addEventListener("click", makeMove, false);
+  }
+  return cellbank
+}
+
+var cells = createBoardVariables();
+var gameboard = [ [cells[0], cells[1], cells[2]],
+                  [cells[3], cells[4], cells[5]],
+                  [cells[6], cells[7], cells[8]] ];
+
+//turn display
 var turn = document.getElementById('turn');
+var invalid = document.getElementById('invalid');
+invalid.style.color = '#D3D3D3';
 
-var gameboard = [ [cell00, cell01, cell02],
-                  [cell10, cell11, cell12],
-                  [cell20, cell21, cell22] ];
-
-var playerOne = {name: "one", marker: "X"};
-var playerTwo = {name: "two", marker: "O"};
+//players
+var playerOne = {name: "one", symbol: "X"};
+var playerTwo = {name: "two", symbol: "O"};
 var symbol = "O";
 
-
+//wincounter
 var P1Wins    = document.getElementById('P1Wins')
 var P2Wins    = document.getElementById('P2Wins')
-var P1WinsNum = Number(document.getElementById('P1Wins').textContent)
-var P2WinsNum = Number(document.getElementById('P2Wins').textContent)
 
 
-//START GAME
+//START NEW GAME
 var start = document.getElementById('startNew');
 start.addEventListener("click", startGame, false);
+var gamewon = false;
 
 function startGame() {
+  invalid.style.color = '#D3D3D3'
+  gamewon = false;
   for (row=0; row < 3; row++) {
     for (column=0; column < 3; column++) {
       gameboard[row][column].textContent = "";
     }
   }
-  turn.textContent = "Ready?";
+  turn.textContent = "Player one move to start game!";
 }
 
 
 function makeMove() {
   if (this.textContent == "") {
-       if (symbol == "O") {
-           symbol =  "X";
+       if      (symbol == "O") {
+                symbol =  "X";
      } else if (symbol == "X") {
                 symbol =  "O";
      }
+      invalid.style.color = '#D3D3D3'
       this.textContent = symbol;
   } else {
-    return console.log("Invalid Move");
+    console.log("Invalid Move");
+    return invalid.style.color = 'darkred'
   }
   winCheck();
   if (gamewon == false) {
     tieCheck();
-  } else {
-    gamewon = false;
   }
 }
 
 //WIN OR TIE GAME?
-
-var gamewon = false;
 function winCheck() {
   if (winGameVertical(0,0) == true || winGameHorizontal(0,0) == true || winGameLeftToRight(2,0) == true || winGameRightToLeft(0,0) == true) {
     gamewon = true;
-    if (symbol == playerOne.marker) {
-        P1WinsNum += 1;
-        P1Wins.innerHTML = P1WinsNum.toString();
+      if (symbol == playerOne.symbol) {
+        P1Wins.innerHTML = (Number(P1Wins.textContent) + 1);
+        turn.textContent = "Player " + playerOne.name + " is the winner!";
     } else {
-        P2WinsNum += 1;
-        P2Wins.innerHTML = P2WinsNum.toString();
+        P2Wins.innerHTML = (Number(P2Wins.textContent) + 1);
+        turn.textContent = "Player " + playerTwo.name + " is the winner!";
     }
-        fillBoard();
-        result = false;
-        symbol = "O";
-        return turn.textContent = "WE HAVE A WINNER!";
-    } else if (symbol == playerOne.marker) {
-        turn.textContent = "Your turn player " + playerTwo.name + ": O";
-    } else {
-        turn.textContent = "Your turn player " + playerOne.name + ": X";
-    }
+      fillBoard();
+      tictacbingo = false;
+      symbol = "O";1
+  } else if (symbol == playerOne.symbol) {
+      turn.textContent = "Your turn player " + playerTwo.name + ": O";
+  } else {
+      turn.textContent = "Your turn player " + playerOne.name + ": X";
+  }
   return gamewon
 }
 
@@ -153,6 +351,7 @@ function tieCheck() {
   }
   if (filledSlots == 9) {
     turn.textContent = "Looks like a tie... Start a new game!";
+    symbol = "O"; //set back to original param
   }
 }
 
@@ -162,96 +361,59 @@ function fillBoard() {
   for (row=0; row < 3; row++) {
     for (column=0; column < 3; column++) {
       if (gameboard[row][column].textContent == "") {
-        gameboard[row][column].textContent = " ";
+          gameboard[row][column].textContent = " ";
       }
     }
   }
 }
 
 //WIN CONDITIONS:
-// I basically remade the code I had for the ruby bingo challenge for javascript. Javascript recursion FTW.
-// some interesting differences in how returns work, tripped me up for a bit here!
-var result = false;
+// Inspired by the code I had for the ruby bingo challenge. Javascript recursion FTW.
+// some interesting differences in how returns work (does not immediately escape the function!!), tripped me up for a bit here!
+var boardlen = gameboard.length
+var tictacbingo = false;
+
 function winGameVertical(row, column) {
-    if (row == (gameboard.length)) {
-      console.log("WIN FOR PLAYER " + symbol + "! VERTICAL!");
-      result = true;
-      return true;
-
-  } else if (column == 3) {
-      return false;
-
+    if (row == (boardlen)) {
+      tictacbingo = true;
+  } else if (column == boardlen) {
   } else if (gameboard[row][column].textContent == symbol) {
-      row += 1;
-      winGameVertical(row, column);
-
-  } else if (column < gameboard.length) {
-      column += 1;
-      row = 0;
-      winGameVertical(row, column);
+      winGameVertical((row+1), column);
+  } else if (column < boardlen) {
+      winGameVertical(0, (column+1));
   }
-  return result;
+  return tictacbingo;
 }
 
 function winGameHorizontal(row,column) {
-    if (column == (gameboard.length)) {
-      console.log("WIN FOR PLAYER " + symbol + "! HORIZONTAL");
-      result = true;
-      return true;
-
-  } else if (row == 3) {
-      return false;
-
+    if (column == (boardlen)) {
+      tictacbingo = true;
+  } else if (row == boardlen) {
   } else if (gameboard[row][column].textContent == symbol) {
-      column += 1;
-      winGameHorizontal(row, column);
-
-  } else if (row < gameboard.length) {
-      row += 1;
-      column = 0;
-      winGameHorizontal(row, column);
+      winGameHorizontal(row, (column+1));
+  } else if (row < boardlen) {
+      winGameHorizontal((row+1), 0);
   }
-  return result;
+  return tictacbingo;
 }
 
 function winGameLeftToRight(row, column) {
     if (row == -1) {
-      console.log("WIN FOR PLAYER " + symbol + "! LEFT TO RIGHT -->");
-      result = true;
-      return true;
-
+      tictacbingo = true;
   } else if (gameboard[row][column].textContent == symbol) {
-      column += 1;
-      row -= 1;
-      winGameLeftToRight(row, column);
-
-  } else {
-      return false;
+      winGameLeftToRight((row-1), (column+1));
   }
-  return result;
+  return tictacbingo;
 }
 
 function winGameRightToLeft(row, column) {
     if (row == 3) {
-      console.log("WIN FOR PLAYER " + symbol + "! RIGHT TO LEFT <--");
-      result = true;
-      return true;
-
+      tictacbingo = true;
   } else if (gameboard[row][column].textContent == symbol) {
-      column += 1;
-      row += 1;
-      winGameRightToLeft(row, column);
-
-  } else {
-      return false;
+      winGameRightToLeft((row+1), (column+1));
   }
-  return result;
+  return tictacbingo;
 }
-
-
-// Refactored Code
-
-
 
 
 
@@ -269,3 +431,5 @@ function winGameRightToLeft(row, column) {
 // seeing if there's any significant refactoring I could do (I'd love to figure out a way to declare all of my cell objects in a function
 // or a for loop -- maybe I'll work on that). In addition, I'd like to get color on the board itself, based on the current player. That will
 // probably take a few more lines of code/functions.
+
+//My refactor included a function to create an array of all of my cell variables, thus eliminating about 20 lines of code -- some other minor refactors and bug fixes -- I could probably turn my horizontal and vertical bingo checkers into a single function, perhaps if I have time I'll give it a shot this week. I also realize that the way I switch turns might be a bit jenky (with a symbol variable holding the value and switching pretty much on the fly in the makeMove) -- hopefully I'll learn better practices and more ways to innovate through the next three weeks.
