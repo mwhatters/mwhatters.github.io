@@ -79,7 +79,7 @@ function winCheck() {
     }
       fillBoard();
       tictacbingo = false;
-      symbol = "O";1
+      symbol = "O";
   } else if (symbol == playerOne.symbol) {
       turn.textContent = "Your turn player " + playerTwo.name + ": O";
   } else {
