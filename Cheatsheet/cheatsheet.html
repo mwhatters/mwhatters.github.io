@@ -1,0 +1,122 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="cheatsheet.css">
+    <title>Tim and Marshall's Flash Cards</title>
+    <link rel="shortcut icon" href=""/>
+  </head>
+
+  <header id = "header">
+    <h1>Tim and Marshall's Cheat Sheet</h1>
+  </header>
+
+  <body>
+
+    <div id = "content">
+      <h2>Looping in JavaScript vs Ruby</h2>
+
+      <div class = "mainbox">
+        <h3>For Loops</h3>
+
+        <i>The basic for loop:</i>
+        <p>Ruby:</p>
+        <div class = "code">
+          <p>array = [1,2,3,4,5] </p>
+          <p>for i in array</p>
+          <p> puts i   </p>
+          <p>end </p>
+          <p>=>1,2,3,4,5</p>
+        </div>
+
+         <p>JavaScript:</p>
+        <div class = "code">
+          <p>var array = [1,2,3,4,5]</p>
+          <p>for (var i in array) {</p>
+          <p>console.log(array[i]);</p>
+          <p>}</p>
+          <p>=>1,2,3,4,5</p>
+        </div>
+
+        <p><i>Notice how in the ruby loop, the 'i' variable in the for loop takes the value associated with whatever index the for loops is currently iterating through. In Javascript, however, this particular for loop assigns 'i' to the *index* of whatever part of the loop is happening. Notice how, to get the same result, explicitely defining array[i] is necessary to output the desired results. Otherwise, the JavaScript for loop will output 0,1,2,3,4</i></p>
+
+        <i>The Iteration:</i>
+
+        <p>Ruby:</p>
+        <div class = "code">
+          <p> (0..9).each { |n| puts n }</p>
+          <p>=>0,1,2,3,4,5,6,7,8,9</p>
+        </div>
+
+
+        <p>JavaScript:</p>
+        <div class = "code">
+          <p>arr = [0,1,2,3,4,5,6,7,8,9]</p>
+          <p>arr.forEach(function (number) {</p>
+          <p>console.log(number);</p>
+          <p>});</p>
+          <p>=>0,1,2,3,4,5,6,7,8,9</p>
+        </div>
+
+              <p><i>Ruby is clearly more geared towards iterative loops that go step by step through data sctructures -- for loops are generally frowned upon. However, javascript also has its method to pass through an array and perform an action to each element of it. the .forEach method will perform whatever function is presented in its argument on each element of the array it is being enacted upon.</i></p>
+      </div> <!-- closing mainbox div -->
+
+   <div class = "mainbox">
+        <h3>While Loops</h3>
+
+        <p><i>Here's 'while' loops in Ruby and JS. Note they aren't popular in JS.</i></p>
+
+        <p>Ruby:</p>
+        <div class = "code">
+          <p>i = 10</p>
+          <p>while i <= 20</p>
+          <p>puts i</p>
+          <p>i += 1</p>
+          <p>end</p>
+          <p>=>10,11,12,13,14,15,16,17,18,19,20</p>
+        </div>
+
+         <p>JavaScript:</p>
+        <div class = "code">
+          <p>i = 10</p>
+          <p>while (i<=20) {</p>
+          <p>console.log(i);</p>
+          <p>i++</p>
+          <p>}</p>
+           <p>=>10,11,12,13,14,15,16,17,18,19,20</p>
+        </div>
+
+        <p><i>The structure of each is, in fact, remarkably similar. The reason why this while loop wouldn't be popular in javascript is because the same exact result can be obtained in a shorter, more concise, and safer way using a for (i=10; i<=20; i++) {..} loop. Although ruby 'while' loops aren't *as* popular as others, it's not always a bad idea to sometimes use them, as a ruby while operates much like a javascript for.</i></p>
+
+        <p><i>The DO WHILE loop:</i></p>
+
+        <p>Ruby:</p>
+        <div class = "code">
+          <p>i = 40</p>
+          <p>while true</p>
+          <p>puts i</p>
+          <p>i += 1</p>
+          <p>break if i > 20</p>
+          <p>end</p>
+          <p>=>40</p>
+        </div>
+
+        <p>JavaScript:</p>
+        <div class = "code">
+          <p>var i = 40</p>
+          <p>do {</p>
+          <p>console.log(i);</p>
+          <p>i++;</p>
+          <p>}</p>
+          <p>while (i<=20);</p>
+          <p>=>40</p>
+        </div>
+
+      <p><i>Definitely the most interesting thing here learned today was the javascript 'do' while loop. Notice how these loops have an acting variable that doesn't meet the requirements of the conditional, and yet still outputs a single value? That's essentially what a 'do' while loop guarantees: that the loop will at least be performed once before the condition is checked for true or false. In Ruby, there's no necessarily simple way to do this other than the way we presented it (unless I have overlooked something!) -- though it's safe to say that the need for a loop functionality like this will probably be... not often at all.</i></p>
+      </div> <!-- closing mainbox div -->
+
+  </body>
+
+  <footer></footer>
+
+</html>
