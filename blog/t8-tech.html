@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>I Don't Git it | Blog | Active Record</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
+
+  <link href='http://fonts.googleapis.com/css?family=Bitter|Inconsolata|Slabo+27px' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png"/>
+
+</head>
+
+<body>
+
+  <div id="container">
+
+    <header>
+      <div id="mainTitle">
+        <h1>I DON'T GIT IT</h1>
+        <h2>a cultural &amp; coding diary</h2>
+      </div>
+
+        <nav>
+            <a class="menuButton" href="../index.html">HOME</a>
+            <a class="menuButton" href="../aboutme.html">ABOUT ME</a>
+            <a class="menuButton" href="../index.html#bottom">BLOG</a>
+            <a class="menuButton" href="../projects.html">PROJECTS</a>
+            <a class="menuButton" href="../contact.html">CONTACT</a>
+        </nav>
+
+    </header>
+
+    <div id="bodyContent">
+
+
+        <h3>MVC and ActiveRecord</h3>
+        <h4>May 29th, 2015</h4>
+
+        <section>
+
+          <p>
+            We've had a few weeks to get into the fundamentals of programming languages. by this point, we should have at least a modicum of comfort navigating these langauges, from creating Ruby classes to manipulating DOM elements with javascript. We've also now been exposed to managing larger sets of data using SQL. At this point, we have many pieces of the puzzle, and we understand how these puzzle pieces work by themselves, but little idea of how these puzzle pieces can be connected to work with each other.
+          </p>
+
+          <p>
+            I can take a stab at how the pieces will be intertwined, though. We can start with what the user will see (client-side) -- an html/css document, with which they will interact. They will at some point input some important piece of data, probably represented as a property within a javascript object, which will then be sent to an SQL database (using JSON? Serialization? Maybe it'll be something entirely different?). On the servers side, we'd use ruby (and rails) to manipulate or configure this data recieved from the client, doing something meaningful to it, and then either storing this data, or returning it to the client.
+          </p>
+
+          <p>
+            This is probably a horrible bastardization of what will be happening, but forgive me, as we've yet to really jump into this topic (I'm beyond excited to get there though). What I want to focus on, however, is that bit where we use rails to manipulate data. In my little experience using rails, there was something called the 'ActiveRecord'. I never really had a clear idea of what this was, or how it worked, but now that we're 9 weeks into a coding bootcamp, I figured I'd give it another shot at understanding in preparation for the onsite experience.
+          </p>
+
+          <h6>Understanding MVC</h6>
+
+            <p>
+              Before we can really understand ActiveRecord, we'll need at least a basic understanding of what MVC is. MVC stand for 'Model View Controller' -- essentialy, it's a web framework technique that outlines how users send and request data with an input, how that input is handled, how it is modified, and how that modified data is spat back out for the user.
+            </p>
+
+            <p>
+              The easiest bit here to understand first is the view. Essentially, the view is what the user sees. The view takes data and displays it to the user.
+            </p>
+
+            <p>
+              The next bit we want to focus on is the controller. When a user puts in their personal information into a form, how will our program know what to do with the data? This essential question is answered by the controller. At it's core, the controller takes data and delegates it to the proper place, where said data can be manipulated.
+            </p>
+
+            <p>
+              'The proper place' in that last sentence is confusing. What the controller is actually doing there is calling the right methods on the data given. Those methods are found in the model -- A model takes in data presented to it by a controller, modifies it, stores it, and gives it back to the view, where the user will then see modified data.
+            </p>
+
+            <p>
+              This cycle is known as 'MVC' -- my explanation can be supplemented with a graphic that I found to be of great help:
+            </p>
+
+            <img src="../imgs/blog/mvc.png" alt="the model, view, controller!">
+
+            <p>
+              It's not a fantastic explanation, but hopefully it'll provide enough substance for the next topic: ActiveRecord
+            </p>
+
+          <h6>So What the hell is ActiveRecord?</h6>
+
+            <p>
+              ActiveRecord is one of the pricipal components of rails, in that it can perform complicated SQL maneuvers with simple ruby commands. ActiveRecord is the Model of our web application -- it  communicates with our relational databases to do what we want. It uses something called 'Object-Relational Mapping' to accomplish this. What this means is that we will ask ActiveRecord for a certain kind of data using a *ruby* method, from which Active record will compose an SQL query from this method, pull the data, and return it to you for use in the view of your web app. It is the means of communication between ruby objects and relational databases in rails. And it's insanely handy, too -- rather than write out complicated SQL queries to find data, we do so using our lovely ruby methods.
+            </p>
+
+            <p>
+              How do we invoke the use of ActiveRecord to gather the information we need? It's as simple as creating an ActiveRecord object. Given we have a model already invoked (which we will get into), we can create an instance of the model using .new notation.
+            </p>
+
+            <p>
+              For example, let us say we have a model for songs. While this blog post will not get into how we create the model, what is important to know is that the Song class object's parent would be ActiveRecord. When we create this inheritance, the Song class is automatically endowed with the abilities of ActiveRecord. The most fundamental abilities include the CRUD methods -- CRUD standing for "Create, Read, Update, Delete". To create an instance of a song, we'd simply create one (the "C" in crud!). It might look something like this:
+            </p>
+
+            <code>Song.create(title:"Never Gonna Give You Up",artist:"Rick Astley")</code>
+
+            <p>
+              Using this create method (Which we know the Song class will respond to as it is a child of ActiveRecord), we are essentially telling ActiveRecord to create a new row in an SQL database for the Song we added above. It will assign it an ID and place it as a new element in that database. We can read the database, update it if the item we need already exists, and deleted items from the database. I won't get into the details of the methods we can use there, but they are radical. More reading on ActiveRecord queries can be found <a href="http://guides.rubyonrails.org/active_record_querying.html">here.</a>
+            </p>
+
+            <p>
+              This overview of ActiveRecord might not be fully accurate, as I'm still learning how it's place in rails is important, and what it can and cannot do in handling data. However, I believe this is a good first step towards understanding ActiveRecord, MVC, and how we use rails methods to make our SQL queries. It's truly cool stuff, and I'm excited to dive deeper once the onsite begins!
+            </p>
+
+        <a class="upshoot" href="#top">Back to Top</a>
+        </section>
+
+    </div>
+
+  <footer>
+    <div id="contactInfo">
+      Made for DBC by Marshall Hattersley
+    </div>
+
+    <div id="socialLinks">
+      <a href="https://www.facebook.com/hattersley" target="_blank"><img src="../imgs/facebook.png" alt="Facebook!"></a>
+      <a href="https://twitter.com/mwhatters"  target="_blank"><img src="../imgs/twitter.png" alt="Twitter!">
+      <a href="https://instagram.com/mwhatters/" target="_blank"><img src="../imgs/instagram.png" alt="Instagram!">
+      <a href="https://www.linkedin.com/profile/preview?vpa=pub&amp;locale=en_US" target="_blank"><img src="../imgs/linkedin.png" alt="LinkedIn!">
+    </div>
+
+  </footer>
+
+
+  </div>
+
+
+</body>
+</html>
