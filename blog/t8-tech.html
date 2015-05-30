@@ -41,21 +41,21 @@
         <section>
 
           <p>
-            We've had a few weeks to get into the fundamentals of programming languages. by this point, we should have at least a modicum of comfort navigating these langauges, from creating Ruby classes to manipulating DOM elements with javascript. We've also now been exposed to managing larger sets of data using SQL. At this point, we have many pieces of the puzzle, and we understand how these puzzle pieces work by themselves, but little idea of how these puzzle pieces can be connected to work with each other.
+            We've had a few weeks to get into the fundamentals of programming languages. by this point, we should have at least a modicum of comfort navigating these languages, from creating Ruby classes to manipulating DOM elements with JavaScript. We've also now been exposed to managing larger sets of data using SQL. At this point, we have many pieces of the puzzle, and we understand how these puzzle pieces work by themselves, but little idea of how these puzzle pieces can be connected to work with each other.
           </p>
 
           <p>
-            I can take a stab at how the pieces will be intertwined, though. We can start with what the user will see (client-side) -- an html/css document, with which they will interact. They will at some point input some important piece of data, probably represented as a property within a javascript object, which will then be sent to an SQL database (using JSON? Serialization? Maybe it'll be something entirely different?). On the servers side, we'd use ruby (and rails) to manipulate or configure this data recieved from the client, doing something meaningful to it, and then either storing this data, or returning it to the client.
+            I can take a stab at how the pieces will be intertwined, though. We can start with what the user will see (client-side) -- an html/css document, with which they will interact. They will at some point input some important piece of data, probably represented as a property within a JavaScript object, which will then be sent to an SQL database (using JSON? Serialization? Maybe it'll be something entirely different?). On the servers side, we'd use ruby (and rails) to manipulate or configure this data received from the client, doing something meaningful to it, and then either storing this data, or returning it to the client.
           </p>
 
           <p>
-            This is probably a horrible bastardization of what will be happening, but forgive me, as we've yet to really jump into this topic (I'm beyond excited to get there though). What I want to focus on, however, is that bit where we use rails to manipulate data. In my little experience using rails, there was something called the 'ActiveRecord'. I never really had a clear idea of what this was, or how it worked, but now that we're 9 weeks into a coding bootcamp, I figured I'd give it another shot at understanding in preparation for the onsite experience.
+            This is probably a horrible bastardization of what will be happening, but forgive me, as we've yet to really jump into this topic (I'm beyond excited to get there though). What I want to focus on, however, is that bit where we use rails to manipulate data. In my little experience using rails, there was something called the 'ActiveRecord'. I never really had a clear idea of what this was, or how it worked, but now that we're 9 weeks into a coding boot camp, I figured I'd give it another shot at understanding in preparation for the on-site experience.
           </p>
 
           <h6>Understanding MVC</h6>
 
             <p>
-              Before we can really understand ActiveRecord, we'll need at least a basic understanding of what MVC is. MVC stand for 'Model View Controller' -- essentialy, it's a web framework technique that outlines how users send and request data with an input, how that input is handled, how it is modified, and how that modified data is spat back out for the user.
+              Before we can really understand ActiveRecord, we'll need at least a basic understanding of what MVC is. MVC stand for 'Model View Controller' -- essentially, it's a web framework technique that outlines how users send and request data with an input, how that input is handled, how it is modified, and how that modified data is spat back out for the user.
             </p>
 
             <p>
@@ -83,7 +83,7 @@
           <h6>So What the hell is ActiveRecord?</h6>
 
             <p>
-              ActiveRecord is one of the pricipal components of rails, in that it can perform complicated SQL maneuvers with simple ruby commands. ActiveRecord is the Model of our web application -- it  communicates with our relational databases to do what we want. It uses something called 'Object-Relational Mapping' to accomplish this. What this means is that we will ask ActiveRecord for a certain kind of data using a *ruby* method, from which Active record will compose an SQL query from this method, pull the data, and return it to you for use in the view of your web app. It is the means of communication between ruby objects and relational databases in rails. And it's insanely handy, too -- rather than write out complicated SQL queries to find data, we do so using our lovely ruby methods.
+              ActiveRecord is one of the principal components of rails, in that it can perform complicated SQL maneuvers with simple ruby commands. ActiveRecord is the Model of our web application -- it  communicates with our relational databases to do what we want. It uses something called 'Object-Relational Mapping' to accomplish this. What this means is that we will ask ActiveRecord for a certain kind of data using a *ruby* method, from which Active record will compose an SQL query from this method, pull the data, and return it to you for use in the view of your web application. It is the means of communication between ruby objects and relational databases in rails. And it's insanely handy, too -- rather than write out complicated SQL queries to find data, we do so using our lovely ruby methods.
             </p>
 
             <p>
@@ -101,7 +101,7 @@
             </p>
 
             <p>
-              This overview of ActiveRecord might not be fully accurate, as I'm still learning how it's place in rails is important, and what it can and cannot do in handling data. However, I believe this is a good first step towards understanding ActiveRecord, MVC, and how we use rails methods to make our SQL queries. It's truly cool stuff, and I'm excited to dive deeper once the onsite begins!
+              This overview of ActiveRecord might not be fully accurate, as I'm still learning how it's place in rails is important, and what it can and cannot do in handling data. However, I believe this is a good first step towards understanding ActiveRecord, MVC, and how we use rails methods to make our SQL queries. It's truly cool stuff, and I'm excited to dive deeper once the on-site begins!
             </p>
 
         <a class="upshoot" href="#top">Back to Top</a>
