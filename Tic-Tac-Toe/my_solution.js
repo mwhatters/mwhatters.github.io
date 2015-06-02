@@ -16,7 +16,7 @@ var gameboard = [ [cells[0], cells[1], cells[2]],
 //turn display
 var turn = document.getElementById('turn');
 var invalid = document.getElementById('invalid');
-invalid.style.color = '#D3D3D3';
+// invalid.style.color = '#D3D3D3';
 
 //players, symbols, and colors
 var playerOne = {name: "one", symbol: "X"};
@@ -35,7 +35,7 @@ start.addEventListener("click", startGame, false);
 var gamewon = false;
 
 function startGame() {
-  invalid.style.color = '#D3D3D3'
+  invalid.textContent = ''
   gamewon = false;
   for (row=0; row < 3; row++) {
     for (column=0; column < 3; column++) {
