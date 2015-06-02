@@ -53,12 +53,13 @@ function makeMove() {
      } else if (symbol == "X") {
                 symbol =  "O";
      }
-      invalid.style.color = '#D3D3D3'
+      invalid.textContent = ''
       this.textContent = symbol;
       this.style.color = colors[symbol];
   } else {
     console.log("Invalid Move");
-    return invalid.style.color = 'darkred'
+    invalid.textContent = 'Invalid Move!';
+    return invalid.style.color = 'darkred';
   }
   winCheck();
   if (gamewon == false) {

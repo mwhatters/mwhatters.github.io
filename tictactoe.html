@@ -2,16 +2,17 @@
 <html>
 
 <head>
-  <title>I Don't Git it | Contact</title>
+  <title>I Don't Git it | Projects</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="./stylesheets/default.css" />
-  <link rel="stylesheet" type="text/css" href="./stylesheets/contact.css" />
-
+  <link rel="stylesheet" type="text/css" href="./Tic-Tac-Toe/template.css" />
   <link href='http://fonts.googleapis.com/css?family=Bitter|Inconsolata|Slabo+27px|Abel' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./imgs/favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="./imgs/favicon.png"/>
+
 </head>
 
 <body>
+
 
   <div id="container">
 
@@ -31,26 +32,67 @@
 
     </header>
 
-      <div id="pagewrapper">
+  <div id="pagewrapper">
     <div id="bodyContent">
 
-         <div class="unitList">
-          <h4>Projects</h4>
-            <ul>
-              <i>
-              <li><a href="./Tic-Tac-Toe/tictactoe.html">Tic Tac Toe</a></li>
-                <ul class="sublist"><li>Week 8's Solo challenge asked us to make a functional JavaScript game. I decided to take a stab at tic-tac-toe. Overall, this was a fun challenge, well worth the effort of learning DOM manipulation.</li></ul>
-            </i>
-            </ul>
+
+        <!-- TIC TAC TOE -->
+        <section>
+          <br />
+
+          <div id="tictactoe">
+            <h1>Tic Tac Toe</h1>
+
+          <div id="game">
+            <div id="rules">
+              <h2 style="color: blue;">Player One -- X</h2>
+              <h2 style="color: red;">Player Two -- O</h2>
+              <h3 id="turn">Player one move to start game!</h3>
+              <br>
+              <h4 id="invalid"></h4>
+            </div>
+
+            <table id="board" border="1">
+              <tr class="row">
+                <td><button id="cell0" type="button"></button></td>
+                <td><button id="cell1" type="button"></button></td>
+                <td><button id="cell2" type="button"></button></td>
+              </tr>
+
+              <tr class="row">
+                <td><button id="cell3" type="button"></button></td>
+                <td><button id="cell4" type="button"></button></td>
+                <td><button id="cell5" type="button"></button></td>
+              </tr>
+
+              <tr class="row">
+                <td><button id="cell6" type="button"></button></td>
+                <td><button id="cell7" type="button"></button></td>
+                <td><button id="cell8" type="button"></button></td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="gameControls">
+            <!-- <button id="reset">Reset</button> -->
+            <button id="startNew">Start New Game</button><br>
+
+            <p>Wins for player one: <div id="P1Wins">0</div></p>
+            <p>Wins for player two: <div id="P2Wins">0</div></p>
+
+          </div>
         </div>
+
+      </section>
 
     </div>
 
-        <aside>
+    <div>
+
+    <aside>
         <div id="profiletext">About Me.</div>
         <img src="./imgs/profile-image.jpg" alt="A picture of Marshall Hattersley" />
           <p>
-          If you are an enemy, LEAVE! Why must you persist?<br><br>
           My name is Marshall. I hope you enjoy the page that you are now visiting. I made it for a school project, as I am part of the Dev Bootcamp experience. I won't lie in saying that making it was very frustrating at times -- CSS can be a very, very painful experience. But hey, no pain, no gain? I think?<br><br>
           Anywho, here is where I'll be posting all of my reflections, blog posts related to the program, and hopefully, in time, some other things related to my other interests. Though for the next couple months, I don't suspect there being any chance to engage in extracurriculars... such is the life.
           <br><br>
@@ -58,7 +100,8 @@
         </p>
       </aside>
 
-  </div><footer>
+  </div>
+  <footer>
     <div id="contactInfo">
       Made for DBC by Marshall Hattersley
     </div>
@@ -77,4 +120,6 @@
 
 
 </body>
+
+<script src="./Tic-Tac-Toe/my_solution.js"></script>
 </html>

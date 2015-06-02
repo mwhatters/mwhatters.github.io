@@ -5,10 +5,18 @@
 }
 
 #bodyContent {
-  margin: auto auto;
   text-align: center;
 }
 
+#tictactoe {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+#tictactoe h1 {
+  margin-bottom: 1em;
+}
 
 h1 {
   font-style: bold;
@@ -27,6 +35,19 @@ h4 {
   color: darkred;
 }
 
+#rules {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#invalid {
+  position: absolute;
+  font-size: 1em;
+  bottom: 0.3em;
+  left: 43%;
+}
+
 table {
   margin: auto auto;
 }
@@ -43,20 +64,33 @@ button:hover {
   background-color: lightgreen;
 }
 
+#game {
+  float: left;
+}
+
+#gameControls {
+  float: right;
+  position: relative;
+  top: 7em;
+}
+
+#other {
+  display: block;
+}
+
 #gameControls button {
   margin: 2em 1em;
   border: 0;
   font-size: inherit;
 }
 
-#P1Wins, #P2Wins, p {
+#P1Wins, #P2Wins {
   display: inline;
   font-size: 1.5em;
 }
 
 #P1Wins {
   color: blue;
-  margin-right: 1em;
 }
 
 #P2Wins {
