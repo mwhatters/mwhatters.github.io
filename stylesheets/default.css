@@ -13,7 +13,7 @@ header, footer {
 }
 
 #container {
-  width:    100%
+  width:    100%;
   margin:   0 auto;
 }
 
@@ -25,8 +25,6 @@ header {
 }
 
 #mainTitle {
-/*  width: 25%;*/
-  /*border-right: 1px solid white;*/
   padding: 0.4em 0.7em 0.8em 1em;
   color: lightgray;
   float: left;
@@ -40,6 +38,10 @@ h1 {
 h2 {
   margin: 0px;
   font-size: 80%;
+}
+
+h4 {
+  text-align: center;
 }
 
 nav {
@@ -75,6 +77,14 @@ nav a:visited {
   color: white;
 }
 
+/*FEATURED POST*/
+
+section img {
+  max-height: 600px;
+  display: block;
+  margin: 20px auto;
+}
+
 /*BODY*/
 
 #pagewrapper {
@@ -94,7 +104,15 @@ nav a:visited {
   overflow: hidden;
 }
 
-#upperBox {
+#bodyContent section {
+  margin-left: 3em;
+}
+
+#bodyContent section p {
+  margin-left: 4em;
+  text-indent: 1em;
+  padding-right: 5em;
+  font-size: 1.1em;
 }
 
 article p {
@@ -224,7 +242,6 @@ footer {
 }
 
 
-
 /*PHONES*/
 
 /*@media only screen and (max-device-width: 480px) {
@@ -239,4 +256,4 @@ footer {
   nav a {
     margin-left: 1.5em;
   }
-}*/
+}
