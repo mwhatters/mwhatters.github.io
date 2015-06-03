@@ -9,7 +9,7 @@
 }
 
 #tictactoe {
-  width: 500px;
+  width: 600px;
   margin: 0 auto;
   margin-top: 2em;
 }
@@ -71,7 +71,7 @@ button:hover {
 #gameControls {
   float: right;
   position: relative;
-  top: 7em;
+  bottom: 19em;
 }
 
 #other {
