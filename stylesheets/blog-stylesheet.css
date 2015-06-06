@@ -24,7 +24,6 @@ h4 {
 }
 
 section {
-  /*margin: 0 6em 0 6em;*/
   padding-bottom: 2em;
   font-size: 1em;
   letter-spacing: 0.02em;
@@ -88,4 +87,60 @@ section img {
 
 .upshoot {
   font-size: 0.7em;
+}
+
+/*MOBILE*/
+
+
+@media only screen and (max-width: 1000px) {
+  aside {
+    display: none;
+  }
+
+  #bodyContent {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  #bodyContent section {
+    margin-left: 30px;
+  }
+
+  #bodyContent section p {
+    margin: 0 auto;
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 0.5em;
+  }
+
+  #pagewrapper {
+    min-width: 0;
+  }
+
+  header, footer {
+    min-width: 0;
+  }
+
+  h5, h6 {
+    text-indent: 0;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+
+  h3 {
+    border: none;
+    text-align: center;
+    margin: 1em auto 0 auto;
+    display: block;
+  }
+
+  h4 {
+    text-align: center;
+    display: block;
+    margin-bottom: 0.5em;
+    top: 0px;
+  }
 }
